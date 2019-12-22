@@ -56,8 +56,8 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(a);
                         break;
                     case R.id.n_tanya:
-                        Intent b = new Intent(MainActivity.this, MainActivity.class);
-                        startActivity(b);
+//                        Intent b = new Intent(MainActivity.this, MainActivity.class);
+//                        startActivity(b);
                         break;
                 }
                 return false;
@@ -72,6 +72,9 @@ public class MainActivity extends AppCompatActivity {
                 .addOnSuccessListener(this, new OnSuccessListener() {
                     @Override
                     public void onSuccess(Object aVoid) {
+
+                        loading.dismiss();
+
                         nama.setText("");
                         nohp.setText("");
                         kel.setText("");
@@ -80,27 +83,6 @@ public class MainActivity extends AppCompatActivity {
                                 "Data Berhasil Ditambahkan",
                                 Toast.LENGTH_SHORT).show();
                     }
-                });
-    }
-
-    private void editUser(keluhan keluhan, String id) {
-        database.child("Data")
-                .child(id)
-                .setValue(keluhan)
-                .addOnSuccessListener(this, new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-
-                        nama.setText("");
-                        nohp.setText("");
-                        kel.setText("");
-
-                        Toast.makeText(MainActivity.this,
-                                "Data Berhasil diedit",
-                                Toast.LENGTH_SHORT).show();
-
-                    }
-
                 });
     }
 
@@ -120,11 +102,20 @@ public class MainActivity extends AppCompatActivity {
             kel.requestFocus();
         } else {
 
+            loading = ProgressDialog.show(MainActivity.this,
+                    null,
+                    "Please wait...",
+                    true,
+                    false);
+
             SubmitData(new keluhan(
                     _nama.toLowerCase(),
                     _nohp.toLowerCase(),
                     _kel.toLowerCase()
+
             ));
+
+
         }
     }
 }

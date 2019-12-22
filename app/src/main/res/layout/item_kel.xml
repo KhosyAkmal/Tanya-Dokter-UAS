@@ -23,7 +23,8 @@
         android:layout_below="@id/v_nama"
         android:layout_marginLeft="4dp"
         android:text="No Hp"
-        android:textSize="14sp" />
+        android:textSize="14sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/v_kel"
