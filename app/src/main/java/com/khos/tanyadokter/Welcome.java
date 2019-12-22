@@ -1,11 +1,13 @@
 package com.khos.tanyadokter;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -16,6 +18,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.khos.tanyadokter.adapter.KeluhanAdapter;
+import com.khos.tanyadokter.fragment.Fragment_welcome;
 import com.khos.tanyadokter.model.keluhan;
 
 import java.util.ArrayList;
@@ -98,8 +101,14 @@ public class Welcome extends AppCompatActivity {
     }
 
     public void loadFragmentWelcome(View view) {
+        Intent intent = new Intent(this, Pendahuluan.class);
+        startActivity(intent);
     }
 
-    public void loadFragmentList(View view) {
+    public void loadActivityList(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
+
+
 }
