@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Tanya Dokter</string>
+    <string name="v_name">Nama : </string>
+    <string name="v_nohp">Nama : </string>
+    <string name="v_keluhan">Nama : </string>
 </resources>
