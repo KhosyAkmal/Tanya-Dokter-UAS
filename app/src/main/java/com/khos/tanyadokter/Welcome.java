@@ -1,5 +1,6 @@
 package com.khos.tanyadokter;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.DefaultItemAnimator;
@@ -9,8 +10,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -38,11 +41,31 @@ public class Welcome extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
+        BottomNavigationView bottomNavigationView = findViewById(R.id.navigation);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                switch (menuItem.getItemId()) {
+                    case R.id.n_pendahuluan:
+                        Intent c = new Intent(Welcome.this, PendahuluanNav.class);
+                        startActivity(c);
+                        break;
+                    case R.id.n_list:
+//                        Intent a = new Intent(Welcome.this, Welcome.class);
+//                        startActivity(a);
+                        break;
+                    case R.id.n_tanya:
+                        Intent b = new Intent(Welcome.this, MainActivity.class);
+                        startActivity(b);
+                        break;
+                }
+                return false;
+            }
+        });
 
         database = FirebaseDatabase.getInstance().getReference();
 
         list_item = findViewById(R.id.list_item);
-//        fab_add = findViewById(R.id.fab_add);
 
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         list_item.setLayoutManager(mLayoutManager);
@@ -100,15 +123,15 @@ public class Welcome extends AppCompatActivity {
         });
     }
 
-    public void loadFragmentWelcome(View view) {
-        Intent intent = new Intent(this, Pendahuluan.class);
-        startActivity(intent);
-    }
-
-    public void loadActivityList(View view) {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-    }
+//    public void loadFragmentWelcome(View view) {
+//        Intent intent = new Intent(this, Pendahuluan.class);
+//        startActivity(intent);
+//    }
+//
+//    public void loadActivityList(View view) {
+//        Intent intent = new Intent(this, MainActivity.class);
+//        startActivity(intent);
+//    }
 
 
 }

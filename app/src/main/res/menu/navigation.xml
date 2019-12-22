@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/n_pendahuluan"
+        android:icon="@drawable/pendahuluan"
+        android:title="Pendahuluan" />
+    <item
+        android:id="@+id/n_list"
+        android:icon="@drawable/list"
+        android:title="List" />
+    <item
+        android:id="@+id/n_tanya"
+        android:icon="@drawable/tanya"
+        android:title="Tanya" />
+</menu>

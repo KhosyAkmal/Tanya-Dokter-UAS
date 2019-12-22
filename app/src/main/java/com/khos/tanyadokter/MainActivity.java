@@ -1,17 +1,23 @@
 package com.khos.tanyadokter;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.khos.tanyadokter.fragment.Fragment_welcome;
 import com.khos.tanyadokter.model.keluhan;
 
 public class MainActivity extends AppCompatActivity {
@@ -35,6 +41,28 @@ public class MainActivity extends AppCompatActivity {
         nama = findViewById(R.id.f_nama);
         nohp = findViewById(R.id.f_nohp);
         kel = findViewById(R.id.f_keluhan);
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.navigation);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                switch (menuItem.getItemId()) {
+                    case R.id.n_pendahuluan:
+                        Intent c = new Intent(MainActivity.this, PendahuluanNav.class);
+                        startActivity(c);
+                        break;
+                    case R.id.n_list:
+                        Intent a = new Intent(MainActivity.this, Welcome.class);
+                        startActivity(a);
+                        break;
+                    case R.id.n_tanya:
+                        Intent b = new Intent(MainActivity.this, MainActivity.class);
+                        startActivity(b);
+                        break;
+                }
+                return false;
+            }
+        });
     }
 
     private void SubmitData (keluhan keluhan){

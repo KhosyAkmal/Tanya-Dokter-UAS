@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.khos.tanyadokter.MainActivity;
+import com.khos.tanyadokter.PendahuluanNav;
 import com.khos.tanyadokter.R;
 import com.khos.tanyadokter.Welcome;
 
@@ -41,7 +42,7 @@ public class Fragment_welcome extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
-        Intent intent = new Intent(getActivity(), MainActivity.class);
+        Intent intent = new Intent(getActivity(), PendahuluanNav.class);
         startActivity(intent);
     }
 

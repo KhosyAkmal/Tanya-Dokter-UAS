@@ -11,6 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".PendahuluanNav"></activity>
         <activity android:name=".Welcome" />
         <activity android:name=".MainActivity" />
         <activity android:name=".SplashScreen">
@@ -20,7 +21,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Pendahuluan"></activity>
+        <activity android:name=".Pendahuluan" />
     </application>
 
 </manifest>
