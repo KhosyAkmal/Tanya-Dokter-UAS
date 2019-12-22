@@ -83,6 +83,27 @@ public class MainActivity extends AppCompatActivity {
                 });
     }
 
+    private void editUser(keluhan keluhan, String id) {
+        database.child("Data")
+                .child(id)
+                .setValue(keluhan)
+                .addOnSuccessListener(this, new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+
+                        nama.setText("");
+                        nohp.setText("");
+                        kel.setText("");
+
+                        Toast.makeText(MainActivity.this,
+                                "Data Berhasil diedit",
+                                Toast.LENGTH_SHORT).show();
+
+                    }
+
+                });
+    }
+
     public void handlerClikDaftarkan(View view) {
         String _nama = nama.getText().toString();
         String _nohp = nohp.getText().toString();

@@ -122,16 +122,4 @@ public class Welcome extends AppCompatActivity {
             }
         });
     }
-
-//    public void loadFragmentWelcome(View view) {
-//        Intent intent = new Intent(this, Pendahuluan.class);
-//        startActivity(intent);
-//    }
-//
-//    public void loadActivityList(View view) {
-//        Intent intent = new Intent(this, MainActivity.class);
-//        startActivity(intent);
-//    }
-
-
 }
