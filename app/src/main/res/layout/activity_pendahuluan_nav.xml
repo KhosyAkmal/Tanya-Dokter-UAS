@@ -4,19 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F1EACA"
     tools:context=".PendahuluanNav">
 
 
     <TextView
+        android:id="@+id/textView8"
         android:layout_width="329dp"
         android:layout_height="147dp"
         android:layout_marginTop="168dp"
         android:text="Fitur Pada Aplikasi : \n 1. Dapat Meng-Inputkan Keluhan beserta Nama dan Nomor Hp User \n 2. Dapat melihat List Keluhan"
+        android:textSize="20dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.064" />
+        app:layout_constraintVertical_bias="0.185" />
 
     <Button
         android:id="@+id/btn_welcome_frag"
@@ -39,5 +43,17 @@
         android:background="#63B68D8D"
         app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@menu/navigation" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="373dp"
+        android:layout_height="260dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.421"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.033"
+        app:srcCompat="@drawable/kisspng_royalty_free_stock_photography_clip_art_welcome_5ac3661ca98986_0662626915227551006944" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

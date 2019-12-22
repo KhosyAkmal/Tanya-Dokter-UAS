@@ -43,12 +43,25 @@
             android:layout_marginStart="48dp"
             android:layout_marginTop="148dp"
             android:text="Semua Keluhan anda akan diterukan ke Aplikasi Dokter, sehingga semua keluhan yang anda sampaikan akan di terima dokter lalu dokter akan menghubungi anda"
+            android:textSize="18sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.07"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.249" />
+            app:layout_constraintVertical_bias="0.406" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="249dp"
+            android:layout_height="257dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.063"
+            app:srcCompat="@drawable/tanda_tanya" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
